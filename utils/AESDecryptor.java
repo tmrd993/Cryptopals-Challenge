@@ -25,7 +25,7 @@ public class AESDecryptor {
 
     public String decrypt() {
 	try {
-	    Cipher cipher = Cipher.getInstance("AES/ECB/PKCS5PADDING");
+	    Cipher cipher = Cipher.getInstance("AES/ECB/NOPADDING");
 	    SecretKeySpec secretKey = new SecretKeySpec(KEY.getBytes("UTF-8"), "AES");
 	    cipher.init(Cipher.DECRYPT_MODE, secretKey);
 	    return new String(cipher.doFinal(encryptedData));
